@@ -68,6 +68,7 @@ class Player(object):
         return self.hand.pop()
 
 
+# Considering the code starting from here
 player_num = int(input("How many players will there be? Please note that our table sits up to 5 people. "))
 print("Very well, let's introduce ourselves then! I am Pegasus, Danilo's laptop, and I will be your dealer!")
 
@@ -139,7 +140,9 @@ player5.draw(deck)
 print(player5.name, "has a/an:")
 player5.showHand()
 
-
+# and up to here it is too comparmentalized. For example, this does not have
+# a variable with the player count. You can make the round a class for example
+# have a loop to call for as long as the players want to play
 
 # bob = Player("Bob")
 # bob.draw(deck).draw(deck)
