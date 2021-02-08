@@ -67,52 +67,22 @@ class Player(object):
     def discard(self):
         return self.hand.pop()
 
-
-# Considering the code starting from here
-player_num = int(input("How many players will there be? Please note that our table sits up to 5 people. "))
 print("Very well, let's introduce ourselves then! I am Pegasus, Danilo's laptop, and I will be your dealer!")
 
-if player_num == 1:
-    player1 = input(str("Player one, what should I call you? "))
-    player1 = Player(player1)
+players = []
+new_player = True
 
-elif player_num == 2:
-    player1 = input(str("Player one, what should I call you? "))
-    player2 = input(str("Player two, what should I call you? "))
-    player1 = Player(player1)
-    player2 = Player(player2)
-
-elif player_num == 3:
-    player1 = input(str("Player one, what should I call you? "))
-    player2 = input(str("Player two, what should I call you? "))
-    player3 = input(str("Player three, what should I call you? "))
-    player1 = Player(player1)
-    player2 = Player(player2)
-    player3 = Player(player3)
-
-elif player_num == 4:
-    player1 = input(str("Player one, what should I call you? "))
-    player2 = input(str("Player two, what should I call you? "))
-    player3 = input(str("Player three, what should I call you? "))
-    player4 = input(str("Player four, what should I call you? "))
-    player1 = Player(player1)
-    player2 = Player(player2)
-    player3 = Player(player3)
-    player4 = Player(player4)
-
-elif player_num == 5:
-    player1 = input(str("Player one, what should I call you? "))
-    player2 = input(str("Player two, what should I call you? "))
-    player3 = input(str("Player three, what should I call you? "))
-    player4 = input(str("Player four, what should I call you? "))
-    player5 = input(str("Player five, what should I call you? "))
-    player1 = Player(player1)
-    player2 = Player(player2)
-    player3 = Player(player3)
-    player4 = Player(player4)
-    player5 = Player(player5)
+while new_player:
+    player_input = input("Please type player name: ")
+    player_names = Player(player_input)
+    players.append(player_names)
+    add_player = str(input("Would you like to add another player? (y/n)"))
+    if add_player != "y" and add_player != "Y":
+        new_player = False
 
 print("Alright. Let's play Ricochet Poker!")
+for Player in players:
+    print(Player.name)
 
 deck = Deck()
 deck.shuffle()
@@ -120,25 +90,25 @@ deck.shuffle()
 
 # Round 1:
 
-player1.draw(deck)
-print(player1.name, "has a/an:")
-player1.showHand()
+# player1.draw(deck)
+# print(player1.name, "has a/an:")
+# player1.showHand()
 
-player2.draw(deck)
-print(player2.name, "has a/an:")
-player2.showHand()
+# player2.draw(deck)
+# print(player2.name, "has a/an:")
+# player2.showHand()
 
-player3.draw(deck)
-print(player3.name, "has a/an:")
-player3.showHand()
+# player3.draw(deck)
+# print(player3.name, "has a/an:")
+# player3.showHand()
 
-player4.draw(deck)
-print(player4.name, "has a/an:")
-player4.showHand()
+# player4.draw(deck)
+# print(player4.name, "has a/an:")
+# player4.showHand()
 
-player5.draw(deck)
-print(player5.name, "has a/an:")
-player5.showHand()
+# player5.draw(deck)
+# print(player5.name, "has a/an:")
+# player5.showHand()
 
 # and up to here it is too comparmentalized. For example, this does not have
 # a variable with the player count. You can make the round a class for example
