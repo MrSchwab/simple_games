@@ -77,7 +77,7 @@ while new_player:
     player_names = Player(player_input)
     players.append(player_names)
     add_player = str(input("Would you like to add another player? (y/n)"))
-    if add_player != "y" and add_player != "Y":
+    if add_player.upper() != "Y":
         new_player = False
 
 print("Alright. Let's play Ricochet Poker!")
