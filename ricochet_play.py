@@ -71,13 +71,15 @@ print("Very well, let's introduce ourselves then! I am Pegasus, Danilo's laptop,
 
 players = []
 new_player = True
+player_counter = 0
 
 while new_player:
     player_input = input("Please type player name: ")
     player_names = Player(player_input)
     players.append(player_names)
+    player_counter += 1
     add_player = str(input("Would you like to add another player? (y/n)"))
-    if add_player.upper() != "Y":
+    if add_player.upper() != "Y" or player_counter == 5:
         new_player = False
 
 print("Alright. Let's play Ricochet Poker!")
