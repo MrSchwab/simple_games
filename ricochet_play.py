@@ -73,14 +73,21 @@ players = []
 new_player = True
 player_counter = 0
 
-while new_player:
+
+def adding_player(players):
     player_input = input("Please type player name: ")
-    player_names = Player(player_input)
-    players.append(player_names)
+    players.append(Player(player_input))
+
+
+while new_player:
+    adding_player(players)
     player_counter += 1
+    if player_counter == 5:
+        break
     add_player = str(input("Would you like to add another player? (y/n)"))
-    if add_player.upper() != "Y" or player_counter == 5:
-        new_player = False
+    if add_player.upper() != "Y":
+        break
+
 
 print("Alright. Let's play Ricochet Poker!")
 for Player in players:
