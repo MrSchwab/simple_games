@@ -88,36 +88,10 @@ for Player in players:
 
 deck = Deck()
 deck.shuffle()
-# deck.show()
 
-# Round 1:
+for Player in players:
+    Player.draw(deck)
+    print(Player.name)
+    print(Player.money)
+    Player.showHand()
 
-# player1.draw(deck)
-# print(player1.name, "has a/an:")
-# player1.showHand()
-
-# player2.draw(deck)
-# print(player2.name, "has a/an:")
-# player2.showHand()
-
-# player3.draw(deck)
-# print(player3.name, "has a/an:")
-# player3.showHand()
-
-# player4.draw(deck)
-# print(player4.name, "has a/an:")
-# player4.showHand()
-
-# player5.draw(deck)
-# print(player5.name, "has a/an:")
-# player5.showHand()
-
-# and up to here it is too comparmentalized. For example, this does not have
-# a variable with the player count. You can make the round a class for example
-# have a loop to call for as long as the players want to play
-
-# bob = Player("Bob")
-# bob.draw(deck).draw(deck)
-# bob.showHand()
-# print("nice cards bob")
-# deck.show()
